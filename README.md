@@ -2,7 +2,7 @@
 NodeJs Wrapper for Hurriyet API
 
 [![npm version](https://badge.fury.io/js/hurriyet.svg)](https://badge.fury.io/js/hurriyet)
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec451f098ff84503a8daa9beae6690fc)](https://www.codacy.com/app/caglarispirli/hurriyet?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hicay/hurriyet&amp;utm_campaign=Badge_Grade)
 https://www.npmjs.com/package/hurriyet
 ## Installation
 Install using npm
