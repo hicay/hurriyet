@@ -1,0 +1,25 @@
+{
+  "name": "hurriyet",
+  "version": "0.1.0",
+  "description": "Hurriyet Public API wrapper",
+  "main": "hurriyet.js",
+  "dependencies": {
+    "request": "^2.75.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hicay/hurriyet/"
+  },
+  "bugs": {
+  "url": "https://github.com/hicay/hurriyet/issues"
+  },
+  "keywords": [
+    "hurriyet","news","hürriyet"
+  ],
+  "author": "Salih Caglar ISPIRLI <caglarispirli@gmail.com> (https://github.com/hicay/)",
+  "license": "MIT"
+}
