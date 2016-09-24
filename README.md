@@ -1,5 +1,5 @@
 # Hurriyet
-NodeJs Wrapper for Hurriyet API (soon)
+NodeJs Wrapper for Hurriyet API
 
 https://www.npmjs.com/package/hurriyet
 ## Installation
