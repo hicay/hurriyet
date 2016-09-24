@@ -29,37 +29,38 @@ var Hurriyet = function (apikey) {
 
 Hurriyet.prototype = {
   Articles : function Articles(){
-    console.log("articles");
   },
   Columns  : function Columns(){},
   Date  : function Date(){/*sadece date dondurecek*/},
   NewsPhotoGallery : function NewsPhotoGallery(){},
   Page : function Page(){},
   Path : function Path(){}
-}
+};
 
 Hurriyet.prototype.Articles = {
-  ep : "articles/",
-  getAll : function(opts, callback) {
+  ep = "articles/",
+  getAll(opts, callback) {
     if(typeof callback === "undefined" && typeof opts === "function") {
       return callAPI("articles", opts);
     } else if (typeof callback === "function") {
-      this.ep +="?"
-      if(opts.filter)
+      this.ep +="?";
+      if(opts.filter){
         this.ep +="%24filter="+opts.filter;
-      if(opts.select)
+      }
+      if(opts.select){
         this.ep +="&%24select="+opts.select;
-      if(opts.limit)
+      }
+      if(opts.limit){
         this.ep +="&%24top="+opts.limit;
+      }
 
-      console.log(this.ep);
       return callAPI(this.ep, callback);
     } else {
       return 0;
     }
 
   },
-  getWithId : function(id,opts,callback){
+  getWithId(id,opts,callback){
     if(typeof opts === "function"){
       return callAPI(this.ep+id,opts);
     }
@@ -71,8 +72,8 @@ Hurriyet.prototype.Articles = {
 };
 
 Hurriyet.prototype.info = function () {
-  console.log("Hurriyet !");
-  console.log("----");
+  //console.log("Hurriyet !");
+  //console.log("----");
 }
 
 
