@@ -1,5 +1,6 @@
 # Hurriyet
 NodeJs Wrapper for Hurriyet API
+[![npm version](https://badge.fury.io/js/hurriyet.svg)](https://badge.fury.io/js/hurriyet)
 
 https://www.npmjs.com/package/hurriyet
 ## Installation
