@@ -18,7 +18,7 @@ var callAPI = function (url,cb) {
     }else{
       cb(error, '');
     }
-  };
+  }
   request(options, callback);
 };
 
