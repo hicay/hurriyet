@@ -13,7 +13,7 @@ var options = {
 var callAPI = function (url,cb) {
   options.url = endpoint+url;
   function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       cb(error, JSON.parse(body));
     }else{
       cb(error, '');
@@ -43,8 +43,7 @@ Hurriyet.prototype.Articles = {
   getAll : function(opts, callback){
     if(typeof callback === 'undefined' && typeof opts === 'function'){
       return callAPI('articles', opts);
-    }
-    if (typeof callback === 'function') {
+    }else if (typeof callback === 'function') {
       this.ep +='?'
       if(opts.filter)
         this.ep +='%24filter='+opts.filter;
