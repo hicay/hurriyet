@@ -1,11 +1,11 @@
 // hurriyet.js
-var request = require('request');
-var endpoint = 'https://api.hurriyet.com.tr/v1/';
+var request = require("request");
+var endpoint = "https://api.hurriyet.com.tr/v1/";
 var options = {
-  url: '',
+  url: "",
   headers: {
-    accept: 'application/json',
-    apikey: ''
+    accept: "application/json",
+    apikey: ""
   }
 };
 
@@ -16,7 +16,7 @@ var callAPI = function (url,cb) {
     if (!error && response.statusCode === 200) {
       cb(error, JSON.parse(body));
     }else{
-      cb(error, '');
+      cb(error, "");
     }
   }
   request(options, callback);
@@ -29,7 +29,7 @@ var Hurriyet = function (apikey) {
 
 Hurriyet.prototype = {
   Articles : function Articles(){
-    console.log('articles');
+    console.log("articles");
   },
   Columns  : function Columns(){},
   Date  : function Date(){/*sadece date dondurecek*/},
@@ -39,18 +39,18 @@ Hurriyet.prototype = {
 }
 
 Hurriyet.prototype.Articles = {
-  ep : 'articles/',
+  ep : "articles/",
   getAll : function(opts, callback) {
-    if(typeof callback === 'undefined' && typeof opts === 'function') {
-      return callAPI('articles', opts);
-    } else if (typeof callback === 'function') {
-      this.ep +='?'
+    if(typeof callback === "undefined" && typeof opts === "function") {
+      return callAPI("articles", opts);
+    } else if (typeof callback === "function") {
+      this.ep +="?"
       if(opts.filter)
-        this.ep +='%24filter='+opts.filter;
+        this.ep +="%24filter="+opts.filter;
       if(opts.select)
-        this.ep +='&%24select='+opts.select;
+        this.ep +="&%24select="+opts.select;
       if(opts.limit)
-        this.ep +='&%24top='+opts.limit;
+        this.ep +="&%24top="+opts.limit;
 
       console.log(this.ep);
       return callAPI(this.ep, callback);
@@ -60,20 +60,19 @@ Hurriyet.prototype.Articles = {
 
   },
   getWithId : function(id,opts,callback){
-    if(typeof opts === 'function'){
-      console.log('asd');
+    if(typeof opts === "function"){
       return callAPI(this.ep+id,opts);
     }
-    if (typeof callback === 'function') {
-      this.ep += id+'?%24select='+opts.select;
+    if (typeof callback === "function") {
+      this.ep += id+"?%24select="+opts.select;
       return callAPI(this.ep, callback);
     }
   }
 };
 
 Hurriyet.prototype.info = function () {
-  console.log('Hurriyet !');
-  console.log('----');
+  console.log("Hurriyet !");
+  console.log("----");
 }
 
 
