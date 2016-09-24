@@ -40,10 +40,10 @@ Hurriyet.prototype = {
 
 Hurriyet.prototype.Articles = {
   ep : 'articles/',
-  getAll : function(opts, callback){
-    if(typeof callback === 'undefined' && typeof opts === 'function'){
+  getAll : function(opts, callback) {
+    if(typeof callback === 'undefined' && typeof opts === 'function') {
       return callAPI('articles', opts);
-    }else if (typeof callback === 'function') {
+    } else if (typeof callback === 'function') {
       this.ep +='?'
       if(opts.filter)
         this.ep +='%24filter='+opts.filter;
@@ -54,6 +54,8 @@ Hurriyet.prototype.Articles = {
 
       console.log(this.ep);
       return callAPI(this.ep, callback);
+    } else {
+      return 0;
     }
 
   },
