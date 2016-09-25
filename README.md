@@ -14,7 +14,7 @@ npm install hurriyet
 ## Usage
 Get an API key from [https://developers.hurriyet.com.tr](https://developers.hurriyet.com.tr)
 
-```
+```javascript
 var hurriyet = require('hurriyet');
 var h = new hurriyet('api token');
 ```
