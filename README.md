@@ -1,5 +1,5 @@
 # Hurriyet
-NodeJs Wrapper for Hurriyet API
+Hurriyet API wrapper for Humans
 
 [![npm version](https://badge.fury.io/js/hurriyet.svg)](https://badge.fury.io/js/hurriyet)
 [![Build Status](https://travis-ci.org/hicay/hurriyet.svg?branch=master)](https://travis-ci.org/hicay/hurriyet)
@@ -52,4 +52,9 @@ h.Columns.getAll({limit:4,select:"Fullname,Title"},newsCallback); // Get 4 colum
 ```javascript
 h.Columns.getFromId(40190106,newsCallback); // Get column from id = 40190106
 h.Columns.getFromId(40190106,{select:"Text"},newsCallback); // Get column's text from id = 40190106
+```
+
+### Date
+```javascript
+h.Date(newsCallback); // Get date - type RFC 1123
 ```

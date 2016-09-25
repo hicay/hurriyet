@@ -30,7 +30,9 @@ var Hurriyet = function (apikey) {
 Hurriyet.prototype = {
   Articles : function Articles(){},
   Columns  : function Columns(){},
-  Date  : function Date(){/*sadece date dondurecek*/},
+  Date  : function Date(callback){
+    return callAPI("date/", callback);
+  },
   NewsPhotoGallery : function NewsPhotoGallery(){},
   Page : function Page(){},
   Path : function Path(){}
