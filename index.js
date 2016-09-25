@@ -28,14 +28,9 @@ var Hurriyet = function (apikey) {
 };
 
 Hurriyet.prototype = {
-  Articles : function Articles(){},
-  Columns  : function Columns(){},
   Date  : function Date(callback){
     return callAPI("date/", callback);
-  },
-  NewsPhotoGallery : function NewsPhotoGallery(){},
-  Page : function Page(){},
-  Path : function Path(){}
+  }
 };
 
 Hurriyet.prototype.Articles = {
@@ -102,4 +97,67 @@ Hurriyet.prototype.Columns = {
   }
 }
 
+Hurriyet.prototype.NewsPhotoGallery = {
+  ep : "newsphotogalleries/",
+  getAll : function(opts, callback) {
+    if(typeof callback === "undefined" && typeof opts === "function") {
+      return callAPI(this.ep, opts);
+    } else if (typeof callback === "function") {
+      this.ep +="?";
+      if(opts.filter){
+        this.ep +="%24filter="+opts.filter;
+      }
+      if(opts.select){
+        this.ep +="&%24select="+opts.select;
+      }
+      if(opts.limit){
+        this.ep +="&%24top="+opts.limit;
+      }
+      return callAPI(this.ep, callback);
+    } else {
+      return 0;
+    }
+  },
+  getFromId : function(id,opts,callback){
+    if(typeof opts === "function"){
+      return callAPI(this.ep+id,opts);
+    }
+    if (typeof callback === "function") {
+      this.ep += id+"?%24select="+opts.select;
+      return callAPI(this.ep, callback);
+    }
+  }
+}
+
+Hurriyet.prototype.Writers = {
+  ep : "writers/",
+  getAll : function(opts, callback) {
+    if(typeof callback === "undefined" && typeof opts === "function") {
+      return callAPI(this.ep, opts);
+    } else if (typeof callback === "function") {
+      this.ep +="?";
+      if(opts.filter){
+        this.ep +="%24filter="+opts.filter;
+      }
+      if(opts.select){
+        this.ep +="&%24select="+opts.select;
+      }
+      if(opts.limit){
+        this.ep +="&%24top="+opts.limit;
+      }
+      return callAPI(this.ep, callback);
+    } else {
+      return 0;
+    }
+  },
+  getFromId : function(id,opts,callback){
+    if(typeof opts === "function"){
+      return callAPI(this.ep+id,opts);
+    }
+    if (typeof callback === "function") {
+      this.ep += id+"?%24select="+opts.select;
+      return callAPI(this.ep, callback);
+    }
+  }
+}
 module.exports = Hurriyet;

@@ -1,6 +1,6 @@
 {
   "name": "hurriyet",
-  "version": "0.2.11",
+  "version": "0.3.1",
   "description": "Hurriyet Public API wrapper",
   "main": "index.js",
   "dependencies": {
@@ -22,7 +22,12 @@
   "keywords": [
     "hurriyet",
     "news",
-    "hürriyet"
+    "hürriyet",
+    "hürriyet haberler",
+    "hurriyet haberler",
+    "turkey news",
+    "local news",
+    "hurriyet api wrapper"
   ],
   "author": "Salih Caglar ISPIRLI <caglarispirli@gmail.com> (https://github.com/hicay/)",
   "license": "MIT"

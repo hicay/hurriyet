@@ -1,5 +1,5 @@
 # Hurriyet
-Hurriyet API wrapper for Humans
+Hurriyet Public API wrapper for Humans
 
 [![npm version](https://badge.fury.io/js/hurriyet.svg)](https://badge.fury.io/js/hurriyet)
 [![Build Status](https://travis-ci.org/hicay/hurriyet.svg?branch=master)](https://travis-ci.org/hicay/hurriyet)
@@ -58,3 +58,32 @@ h.Columns.getFromId(40190106,{select:"Text"},newsCallback); // Get column's text
 ```javascript
 h.Date(newsCallback); // Get date - type RFC 1123
 ```
+
+### News Photo Gallery
+##### Get galleries
+```javascript
+h.NewsPhotoGallery.getAll(newsCallback); // Get galleries
+h.NewsPhotoGallery.getAll({limit:3},newsCallback); // Get 3 galleries
+h.NewsPhotoGallery.getAll({limit:4,select:"Url,Title"},newsCallback); // Get galleries' url and title
+```
+##### Get single gallery from id
+```javascript
+h.NewsPhotoGallery.getFromId(40190642,newsCallback); // Get gallery from id = 40190642
+h.NewsPhotoGallery.getFromId(40190642,{select:"Description"},newsCallback); // Get gallery's description from id = 40190642
+```
+
+### Writers
+##### Get Writers
+```javascript
+h.Writers.getAll(newsCallback); // Get writers
+h.Writers.getAll({limit:3},newsCallback); // Get 3 writers
+h.Writers.getAll({limit:4,select:"Fullname"},newsCallback); // Get writers' fullname
+```
+##### Get single writer from id
+```javascript
+h.Writers.getFromId("55ea09f9f018fbaf449425c4",newsCallback); // Get writer from id = 55ea09f9f018fbaf449425c4
+h.Writers.getFromId("55ea09f9f018fbaf449425c4",{select:"Fullname"},newsCallback); // Get writer's fullname from id = 55ea09f9f018fbaf449425c4
+```
+
+## License
+This is available as open source under the terms of the [MIT License](https://github.com/hicay/hurriyet/blob/master/licence).
