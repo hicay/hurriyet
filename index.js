@@ -1,5 +1,3 @@
-'use strict';
-
 var request = require("request");
 var endpoint = "https://api.hurriyet.com.tr/v1/";
 var options = {
@@ -95,7 +93,7 @@ Hurriyet.prototype.Columns = {
       return callAPI(this.ep, callback);
     }
   }
-}
+};
 
 Hurriyet.prototype.NewsPhotoGallery = {
   ep : "newsphotogalleries/",
@@ -127,7 +125,7 @@ Hurriyet.prototype.NewsPhotoGallery = {
       return callAPI(this.ep, callback);
     }
   }
-}
+};
 
 Hurriyet.prototype.Writers = {
   ep : "writers/",
@@ -159,5 +157,6 @@ Hurriyet.prototype.Writers = {
       return callAPI(this.ep, callback);
     }
   }
-}
+};
+
 module.exports = Hurriyet;
