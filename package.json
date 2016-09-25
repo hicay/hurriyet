@@ -4,21 +4,25 @@
   "description": "Hurriyet Public API wrapper",
   "main": "hurriyet.js",
   "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
     "request": "^2.75.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test.js"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hicay/hurriyet/"
   },
   "bugs": {
-  "url": "https://github.com/hicay/hurriyet/issues"
+    "url": "https://github.com/hicay/hurriyet/issues"
   },
   "keywords": [
-    "hurriyet","news","hürriyet"
+    "hurriyet",
+    "news",
+    "hürriyet"
   ],
   "author": "Salih Caglar ISPIRLI <caglarispirli@gmail.com> (https://github.com/hicay/)",
   "license": "MIT"

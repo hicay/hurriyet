@@ -39,8 +39,8 @@ Hurriyet.prototype = {
 };
 
 Hurriyet.prototype.Articles = {
-  ep = "articles/",
-  getAll(opts, callback) {
+  ep : "articles/",
+  getAll : function(opts, callback) {
     if(typeof callback === "undefined" && typeof opts === "function") {
       return callAPI("articles", opts);
     } else if (typeof callback === "function") {
@@ -61,7 +61,7 @@ Hurriyet.prototype.Articles = {
     }
 
   },
-  getWithId(id,opts,callback){
+  getWithId : function(id,opts,callback){
     if(typeof opts === "function"){
       return callAPI(this.ep+id,opts);
     }
