@@ -16,28 +16,40 @@ npm install hurriyet
 Get an API key from [https://developers.hurriyet.com.tr](https://developers.hurriyet.com.tr)
 
 ```javascript
-var hurriyet = require('hurriyet');
-var h = new hurriyet('api token');
+var Hurriyet = require('hurriyet');
+var h = new Hurriyet('api token');
 ```
-
-### Article
 ##### Callback Function
 ```javascript
 var newsCallback = function(err, data)
   if (err)
     console.log(err);
   console.log(data);
-  //console.log(data[0].Description); // Description of first node
 };
 ```
+
+### Articles
 ##### Get daily news
 ```javascript
 h.Articles.getAll(newsCallback); // Get daily news
 h.Articles.getAll({limit:4},newsCallback); // Get top 4 daily news
-h.Articles.getAll({limit:4,select:'Description'},newsCallback); // Get top 4 daily news' descriptions
+h.Articles.getAll({limit:4,select:"Description"},newsCallback); // Get top 4 daily news' descriptions
 ```
 ##### Get single news from id
 ```javascript
-h.Articles.getWithId(40199111,newsCallback); // Get news from id = 40199111
-h.Articles.getWithId(40199111,{select:'Description'},newsCallback); // Get news' description from id = 40199111
+h.Articles.getFromId(40199111,newsCallback); // Get news from id = 40199111
+h.Articles.getFromId(40199111,{select:"Description"},newsCallback); // Get news' description from id = 40199111
+```
+
+### Columns
+##### Get columns
+```javascript
+h.Columns.getAll(newsCallback); // Get columns
+h.Columns.getAll({limit:4},newsCallback); // Get 4 columns
+h.Columns.getAll({limit:4,select:"Fullname,Title"},newsCallback); // Get 4 columns' writer and title
+```
+##### Get single column from id
+```javascript
+h.Columns.getFromId(40190106,newsCallback); // Get column from id = 40190106
+h.Columns.getFromId(40190106,{select:"Text"},newsCallback); // Get column's text from id = 40190106
 ```
